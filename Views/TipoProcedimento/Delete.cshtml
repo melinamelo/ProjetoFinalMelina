@@ -1,0 +1,25 @@
+﻿@model ProjetoFinalMelina.Models.TipoProcedimento
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="pags">Deletar este tipo de procedimento</h1>
+
+<h3 class="pags">Você deseja deletar este tipo de procedimento?</h3>
+<div class="flex">
+    <dl class="info">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoProcedimentoNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoProcedimentoNome)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" class="info4">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar para a lista de tipos de procedimentos</a>
+    </form>
+</div>

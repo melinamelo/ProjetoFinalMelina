@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProjetoFinalMelina.Models.Estado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="titulo">Página de Estados</h1>
+
+<p>
+    <a asp-action="Create" class="novo">Adicionar novo estado</a>
+</p>
+<div class="search" style="margin-left: 9.5rem">
+    @using (Html.BeginForm("Index", "Estado", FormMethod.Get))
+    {
+            <p>
+                Procure pelo estado aqui: @Html.TextBox("pesquisa")
+            <input class="pesquisa" type="submit" value="Pesquisar">
+            </p>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoNome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoNome)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

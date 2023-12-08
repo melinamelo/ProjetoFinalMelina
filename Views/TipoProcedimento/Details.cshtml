@@ -1,0 +1,23 @@
+﻿@model ProjetoFinalMelina.Models.TipoProcedimento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="pags">Detalhes deste tipo de procedimento</h1>
+
+<div>
+    <hr />
+    <dl class="info">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoProcedimentoNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoProcedimentoNome)
+        </dd>
+    </dl>
+</div>
+<div class="info">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Voltar para a lista de tipos de procedimentos</a>
+</div>

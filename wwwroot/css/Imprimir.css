@@ -1,0 +1,87 @@
+﻿
+.imprimirlogo {
+    width: 400px;
+    height: 400px;
+    margin-left: 10rem;
+}
+
+.principal h2 {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-size: 25px;
+     margin-top: -4rem;
+}
+
+.principal span {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 50px;
+    font-size: 15px;
+    display: block;
+}
+
+.linha {
+    width: 93%;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+
+.detalhes-gerais {
+    display: flex;
+}
+
+.detalhes h3 {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: 5px;
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.detalhes span {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 50px;
+    color: rgb(196, 196, 196);
+}
+
+.detalhes2 span {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 100px;
+    color: rgb(196, 196, 196);
+    display: block;
+    margin-top: 37px;
+    font-size: 15px;
+}
+
+.resultado {
+    margin-left: 50px;
+}
+
+.resultado span {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+.resultado p {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(196, 196, 196);
+    font-size: 15px;
+}
+
+.metodologia {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    margin-left: 50px;
+}

@@ -1,0 +1,48 @@
+﻿@model ProjetoFinalMelina.Models.ProcedimentoRealizado
+@{
+    Layout = null;
+}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Imprimir.css" asp-append-version="true" />
+    <title>Procedimento Realizado</title>
+</head>
+<body>
+    <main class="exame">
+        <header class="logo">
+            <img src="~/img/labmelo-removebg-preview.png" class="imprimirlogo"/>
+        </header>
+        <div class="principal">
+            <h2>@Html.DisplayFor(model => model.Cliente.ClienteNome)</h2>
+            <span>CPF: @Html.DisplayFor(model => model.Cliente.ClienteCpf)</span>
+            <span>Sexo: @Html.DisplayFor(model => model.Cliente.ClienteSexo)</span>
+            <span>Clínica: LABMelo</span>
+        </div>
+        <hr class="linha"></hr>
+        <div class="detalhes-gerais">
+            <div class="detalhes">
+                <h3>@Html.DisplayFor(model => model.Procedimento.ProcedimentoNome)</h3>
+                <span>@Html.DisplayFor(model => model.Procedimento.ProcedimentoObservacao)</span>
+                <span>@Html.DisplayFor(model => model.Procedimento.TipoProcedimento)</span>
+            </div>
+            <div class="detalhes2">             
+                <span>@Html.DisplayFor(model => model.LocalRealizacao.LocalNome)</span>
+            </div>
+        </div>
+        <hr class="linha"></hr>
+        <div class="resultado"> 
+            <span>@Html.DisplayFor(model => model.ObservacaoRealizacao)</span>
+            <p>
+                Valores de referência: Normal: inferior a 99 mg/dL
+                Alterada: entre 100 mg/dL e 125 mg/dL
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Colaborador.ColaboradorNome)
+            </p>
+        </div>
+        <hr class="linha"/>
+    </main>
+</body>
+</html>

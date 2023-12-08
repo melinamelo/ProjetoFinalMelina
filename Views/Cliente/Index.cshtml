@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ProjetoFinalMelina.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/hover.css" rel="stylesheet" />
+<h1 class="titulo">Página dos clientes</h1>
+
+<p>
+    <a asp-action="Create" class="novo">Adicionar novo cliente</a>
+</p>
+<div class="search">
+    @using (Html.BeginForm("Index", "Cliente", FormMethod.Get))
+    {
+        <p>
+            Procure pela cliente aqui: @Html.TextBox("pesquisa")
+            <input class="pesquisa" type="submit" value="Pesquisar">
+        </p>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteCpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteSexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteTelefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteEndereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteNumero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteCpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteSexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteTelefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteEndereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteNumero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade.CidadeNome)
+            </td>
+            <td>
+               <button class="hover"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button>
+               <button class="hover"><a asp-action="Details" asp-route-id="@item.Id">Detalhes</a></button>
+               <button class="hover"><a asp-action="Delete" asp-route-id="@item.Id">Deletar</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

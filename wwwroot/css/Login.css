@@ -1,0 +1,64 @@
+﻿body {
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    background-color: #E9D9D6;
+}
+.bodyHome {
+    background-image: linear-gradient(90deg,
+    rgba(0,0,0,0.38707983193277307) 100%, 
+    rgba(0,0,0,0.3982843137254902) 100%, 
+    rgba(0,0,0,0.6896008403361344) 100%),
+    url("/img/exame.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 480px;
+}
+.mensagem {
+    margin-top: 10px;
+}
+.todo-login {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #959DDE;
+    width: 20%;
+    height: 350px;
+    margin-top: 9rem;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px #000000;
+}
+label {
+    text-align: left;
+    margin-left: 0.2rem;
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-bottom: 5px;
+    color: black;
+}
+.caixa-login1, .caixa-login2 {
+    margin: 0 auto;
+    width: 95%;
+
+}
+input {
+    width: 100%;
+    padding: 9px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border-color: #DE878D;
+}
+.entrar {
+    width: 50%;
+    border: none;
+    background-color: #DE878D;
+    color: white;
+    border-radius: 8px;
+    margin-top: -1rem;
+    width: 180px;
+    height: 40px;
+}
+.logo {
+    width:80%;
+}

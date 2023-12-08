@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProjetoFinalMelina.Models.ProcedimentoRealizado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/hover.css" rel="stylesheet" />
+<h1 class="titulo">Página de procedimentos realizados</h1>
+
+<p>
+    <a asp-action="Create" class="novo">Adicionar novo procedimento realizado</a>
+</p>
+<div class="search">
+    @using (Html.BeginForm("Index", "ProcedimentoRealizado", FormMethod.Get))
+    {
+                <p>
+                    Procure pelo local aqui: @Html.TextBox("pesquisa")
+                <input class="pesquisa" type="submit" value="Pesquisar">
+                </p>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Procedimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colaborador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocalRealizacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRealizacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObservacaoRealizacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.ClienteNome)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Procedimento.ProcedimentoNome)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Colaborador.ColaboradorNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalRealizacao.LocalNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRealizacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObservacaoRealizacao)
+            </td>
+            <td>
+               <button class="hover"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button>
+               <button class="hover"><a asp-action="Details" asp-route-id="@item.Id">Detalhes</a></button>
+               <button class="hover"><a asp-action="Delete" asp-route-id="@item.Id">Deletar</a></button>
+               <button class="hover"><a asp-action="Imprimir" asp-route-id="@item.Id" target="_blank">Imprimir</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

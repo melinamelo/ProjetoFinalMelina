@@ -1,0 +1,37 @@
+﻿@model ProjetoFinalMelina.Models.Cidade
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="pags">Editar esta cidade</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" class="form-edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CidadeNome" class="control-label"></label>
+                <input asp-for="CidadeNome" class="form-control" />
+                <span asp-validation-for="CidadeNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoId" class="control-label">Estado</label>
+                <select asp-for="EstadoId" class="form-control" asp-items="ViewBag.EstadoId"></select>
+                <span asp-validation-for="EstadoId" class="text-danger"></span>
+            </div>
+            <div class="button">
+                <input type="submit" value="Salvar alterações" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="a-edit">
+    <a asp-action="Index">Voltar para a lista de cidades</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

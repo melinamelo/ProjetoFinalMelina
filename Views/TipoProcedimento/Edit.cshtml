@@ -1,0 +1,32 @@
+﻿@model ProjetoFinalMelina.Models.TipoProcedimento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class ="pags">Editar este tipo de procedimento</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" class="form-edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TipoProcedimentoNome" class="control-label"></label>
+                <input asp-for="TipoProcedimentoNome" class="form-control" />
+                <span asp-validation-for="TipoProcedimentoNome" class="text-danger"></span>
+            </div>
+            <div class="button">
+                <input type="submit" value="Salvar Alterações" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="a-edit3">Voltar para a lista de tipos de procedimentos</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

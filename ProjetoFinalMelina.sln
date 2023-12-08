@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoFinalMelina", "ProjetoFinalMelina.csproj", "{5D815637-DFF6-40E1-98CF-6D449DB6B75C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D815637-DFF6-40E1-98CF-6D449DB6B75C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D815637-DFF6-40E1-98CF-6D449DB6B75C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D815637-DFF6-40E1-98CF-6D449DB6B75C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D815637-DFF6-40E1-98CF-6D449DB6B75C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BA44EA1-8BAE-4B1C-A053-48C5E701CC71}
+	EndGlobalSection
+EndGlobal

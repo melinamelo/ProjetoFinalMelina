@@ -1,0 +1,55 @@
+﻿@model ProjetoFinalMelina.Models.Colaborador
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="pags">Deletar este colaborador</h1>
+
+<h3 class="pags">Você deseja deletar este colaborador?</h3>
+<div class="flex">
+    <dl class="info">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ColaboradorNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ColaboradorNome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ColaboradorCpf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ColaboradorCpf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ColaboradorSexo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ColaboradorSexo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ColaboradorTelefone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ColaboradorTelefone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cidade.CidadeNome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoColaborador)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoColaborador.TipoColaboradorNome)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" class="info3">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar para a lista de colaboradores</a>
+    </form>
+</div>

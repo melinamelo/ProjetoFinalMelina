@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ProjetoFinalMelina.Models.Cidade>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/hover.css" rel="stylesheet" />
+<h1 class="titulo">Página de cidades</h1>
+
+<p>
+    <a asp-action="Create" class="novo">Adicionar nova cidade</a>
+</p>
+<div class="search">
+    @using (Html.BeginForm("Index", "Cidade", FormMethod.Get))
+    {
+                <p>
+                    Procure pela cidade aqui: @Html.TextBox("pesquisa")
+                <input class="pesquisa" type="submit" value="Pesquisar">
+                </p>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CidadeNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CidadeNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado.EstadoNome)
+            </td>
+            <td>
+               <button class="hover"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button>
+               <button class="hover"><a asp-action="Details" asp-route-id="@item.Id">Detalhes</a></button>
+               <button class="hover"><a asp-action="Delete" asp-route-id="@item.Id">Deletar</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

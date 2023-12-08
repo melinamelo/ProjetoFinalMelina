@@ -1,0 +1,27 @@
+﻿@model ProjetoFinalMelina.Models.Usuario
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/Login.css" asp-append-version="true" />
+<body class="bodyHome">
+<div class="todo-login">
+    <form asp-action="Login">
+        <img class="logo" src="./img/LABMelo-removebg-preview.png" />
+        <div class="caixa-login1" style="margin-top: 2rem">
+                <label asp-for="UsuarioEmail" style="display: block"></label>
+                <input asp-for="UsuarioEmail" />
+                <span asp-validation-for="UsuarioEmail"></span>
+        </div>
+        <div class="caixa-login2">
+                <label asp-for="UsuarioSenha" style="display: block"></label>
+                <input asp-for="UsuarioSenha" type="password" />
+                <span asp-validation-for="UsuarioSenha"></span>
+        </div>
+        <h4 class="mensagem">@ViewBag.Mensagem</h4>
+        <br />
+        <div>
+            <input class="entrar" type="submit" value="Entrar"/>
+        </div>
+    </form>
+</div>
+</body>

@@ -1,0 +1,52 @@
+﻿@model ProjetoFinalMelina.Models.ProcedimentoRealizado
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="pags">Adicionar Procedimento Realizado</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" class="form-edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label">Cliente</label>
+                <select asp-for="ClienteId" class ="form-control" asp-items="ViewBag.ClienteId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcedimentoId" class="control-label">Procedimento</label>
+                <select asp-for="ProcedimentoId" class ="form-control" asp-items="ViewBag.ProcedimentoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ColaboradorId" class="control-label">Colaborador</label>
+                <select asp-for="ColaboradorId" class ="form-control" asp-items="ViewBag.ColaboradorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalRealizacaoId" class="control-label">Local em que foi realizado</label>
+                <select asp-for="LocalRealizacaoId" class ="form-control" asp-items="ViewBag.LocalRealizacaoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataRealizacao" class="control-label">Data da realização</label>
+                <input asp-for="DataRealizacao" class="form-control" />
+                <span asp-validation-for="DataRealizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObservacaoRealizacao" class="control-label"></label>
+                <input asp-for="ObservacaoRealizacao" class="form-control" />
+                <span asp-validation-for="ObservacaoRealizacao" class="text-danger"></span>
+            </div>
+            <div class="button-criar">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="a-edit3">Voltar para a lista de procedimentos realizados</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

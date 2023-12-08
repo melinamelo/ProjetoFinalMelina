@@ -1,0 +1,35 @@
+﻿@model ProjetoFinalMelina.Models.Procedimento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="pags">Detalhes do procedimento</h1>
+
+<div>
+    <hr />
+    <dl class="info">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcedimentoNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProcedimentoNome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcedimentoObservacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProcedimentoObservacao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoProcedimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoProcedimento.TipoProcedimentoNome)
+        </dd>
+    </dl>
+</div>
+<div class="info">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Voltar para a lista de procedimentos</a>
+</div>

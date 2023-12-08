@@ -1,0 +1,29 @@
+﻿@model ProjetoFinalMelina.Models.Cidade
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="pags">Detalhes sobre a cidade</h1>
+
+<div>
+    <hr />
+    <dl class="info">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CidadeNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CidadeNome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado.EstadoNome)
+        </dd>
+    </dl>
+</div>
+<div class="info">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Voltar para a lista de cidades</a>
+</div>

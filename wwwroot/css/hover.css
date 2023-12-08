@@ -1,0 +1,83 @@
+﻿import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+// Mixin below used to center the button. If using in production, remove the mixin and add position relative or absolute to button.
+
+@mixin center($extend: true) {
+    @if $extend {
+        @extend %center;
+    }
+
+    @else {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+%center {
+    @include center($extend: false);
+}
+
+body {
+}
+
+.hover {
+    @include center;
+    background: #BACFDE;
+    color: #DE878D;
+    width: 70px;
+    height: 30px;
+    border: 0;
+    font-size: 15px;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    transition: .6s;
+    overflow: hidden;
+    &:focus
+
+
+{
+    outline: 0;
+}
+
+&:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
+}
+
+&:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+}
+
+&:hover {
+    background: #C1C1C1;
+    cursor: pointer;
+    border: none !important;
+    &:before
+
+{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 0.6;
+    transition: .7s;
+}
+
+}
+}

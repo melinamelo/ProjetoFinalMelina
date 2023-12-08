@@ -1,0 +1,34 @@
+﻿@model ProjetoFinalMelina.Models.Cidade
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="pags">Adicionar uma nova cidade</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" class="form-edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CidadeNome" class="control-label"></label>
+                <input asp-for="CidadeNome" class="form-control" />
+                <span asp-validation-for="CidadeNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoId" class="control-label">Estado</label>
+                <select asp-for="EstadoId" class ="form-control" asp-items="ViewBag.EstadoId">Estado</select>
+            </div>
+            <div class="button-criar">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="a-edit">Voltar para a lista de cidades</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

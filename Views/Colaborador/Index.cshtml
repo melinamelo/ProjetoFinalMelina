@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ProjetoFinalMelina.Models.Colaborador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="titulo">Página de colaboradores</h1>
+<link href="~/css/hover.css" rel="stylesheet" />
+<p>
+    <a asp-action="Create" class="novo">Adicionar novo colaborador</a>
+</p>
+<div class="search">
+    @using (Html.BeginForm("Index", "Colaborador", FormMethod.Get))
+    {
+            <p>
+                Procure pelo colaborador aqui: @Html.TextBox("pesquisa")
+            <input class="pesquisa" type="submit" value="Pesquisar">
+            </p>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ColaboradorNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColaboradorCpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColaboradorSexo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColaboradorTelefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoColaborador)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColaboradorNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColaboradorCpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColaboradorSexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColaboradorTelefone)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Cidade.CidadeNome)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.TipoColaborador.TipoColaboradorNome)
+            </td>
+            <td>
+               <button class="hover"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button>
+               <button class="hover"><a asp-action="Details" asp-route-id="@item.Id">Detalhes</a></button>
+               <button class="hover"><a asp-action="Delete" asp-route-id="@item.Id">Deletar</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
